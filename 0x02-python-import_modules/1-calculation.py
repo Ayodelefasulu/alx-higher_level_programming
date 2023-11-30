@@ -4,14 +4,14 @@ from calculator_1 import add, sub, mul, div
 a = 10
 b = 5
 
-result = add(a, b)
-print("{:d} + {:d} = {:d}".format(a, b, result))
+result1 = add(a, b)
+print("{:d} + {:d} = {:d}".format(a, b, result1))
 
-result = sub(a, b)
-print("{:d} - {:d} = {:d}".format(a, b, result))
+result2 = sub(a, b)
+print("{:d} - {:d} = {:d}".format(a, b, result2))
 
-result = mul(a, b)
-print("{:d} * {:d} = {:d}".format(a, b, result))
+result3 = mul(a, b)
+print("{:d} * {:d} = {:d}".format(a, b, result3))
 
-result = div(a, b)
-print("{:d} / {:d} = {:d}".format(a, b, result))
+result4 = div(a, b)
+print("{:d} / {:d} = {:d}".format(a, b, result4))
