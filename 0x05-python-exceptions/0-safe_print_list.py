@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+
 def safe_print_list(my_list=[], x=0):
     a = 0
     for num in my_list:
@@ -11,3 +14,14 @@ def safe_print_list(my_list=[], x=0):
             print("This is not a number")
     print("\n")
     return a
+
+"""def safe_print_list(my_list=[], x=0):
+    count = 0
+    try:
+        for i in range(x):
+            print(my_list[i], end="")
+            count += 1
+    except IndexError:
+        pass
+    finally:
+"""
