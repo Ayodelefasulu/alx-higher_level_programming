@@ -2,7 +2,8 @@
 
 """Module: 1-square
 
-This module defines a class, Square, representing a square with a private size attribute.
+This module defines a class, Square, representing
+a square with a private size attribute.
 
 Classes:
     Square: A class for creating square objects with a private size attribute.
@@ -14,7 +15,8 @@ Methods:
     __init__(self, size): Instantiates a Square with a given size.
 
 Notes:
-    - The size attribute is private, and its name is modified using name mangling
+    - The size attribute is private, and its name is modified using
+    name mangling
       to include the class name, ensuring privacy and encapsulation.
 
 Example:
