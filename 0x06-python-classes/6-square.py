@@ -52,7 +52,6 @@ Example:
 # ... [Class implementation]
 
 
-
 class Square:
     """Class representing a square with size and position attributes.
 
@@ -67,7 +66,8 @@ class Square:
         size(self): Getter method for retrieving the size attribute.
         size(self, value): Setter method for setting the size attribute.
         position(self): Getter method for retrieving the position attribute.
-        position(self, value): Setter method for setting the position attribute.
+        position(self, value): Setter method for
+        setting the position attribute.
         area(self): Public instance method returns current square area.
         my_print(self): Public instance method prints the square.
 
@@ -87,7 +87,8 @@ class Square:
                 (default is (0, 0)).
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
+            TypeError: If size is not an integer or position is not a
+            tuple of 2 positive integers.
             ValueError: If size is less than 0.
         """
         self.size = size
@@ -131,7 +132,7 @@ class Square:
             TypeError: If value is not a tuple of 2 positive integers.
         """
         if not isinstance(value, tuple) or len(value) != 2\
-            or not all(isinstance(x, int) and x >= 0 for x in value):
+                or not all(isinstance(x, int) and x >= 0 for x in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -140,7 +141,8 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Public instance method prints the square with the character '#' to stdout."""
+        """Public instance method prints the square with the character
+            '#' to stdout."""
         if self.__size == 0:
             print()
         else:
@@ -148,4 +150,3 @@ class Square:
                 print()
             for _ in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
-
