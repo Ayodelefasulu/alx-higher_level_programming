@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+class LockedClass:
+    def __init__(self, first_name):
+        if self.first_name != first_name:
+            break
+        else:
+            first_name
