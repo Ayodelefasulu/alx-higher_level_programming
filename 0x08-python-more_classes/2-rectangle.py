@@ -72,7 +72,7 @@ class Rectangle:
 
     Methods:
         __init__(self, width=0, height=0):
-            Initializes a new Rectangle instance with optional width and height.
+            Initializes a new Rectangle instance with optional width & height.
 
         @property
         width(self):
@@ -166,4 +166,5 @@ class Rectangle:
 
         If width or height is equal to 0, perimeter is equal to 0.
         """
-        return 2 * (self.__width + self.__height) if self.__width > 0 and self.__height > 0 else 0
+        return 2 * (self.__width + self.__height) if self.__width >\
+            0 and self.__height > 0 else 0
