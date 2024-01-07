@@ -64,7 +64,7 @@ Methods:
         Prints "Bye rectangle..." when instance of Rectangle is deleted.
 
 Class Attributes:
-    number_of_instances (int): Initialized to 0. 
+    number_of_instances (int): Initialized to 0.
     Incremented during each new instance instantiation.
                               Decremented during each instance deletion.
     print_symbol (str or any): Initialized to "#".
@@ -132,7 +132,7 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initializes new Rectangle instance with optional width & height."""
+        """Initializes new Rectangle instance with optional width&height."""
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -200,12 +200,12 @@ class Rectangle:
 
         If width or height is equal to 0, returns an empty string.
         """
-        return "\n".join([str(self.print_symbol) * self.__width] *
-                         self.__height)\
-                             if self.__width > 0 and self.__height > 0 else ""
+        return "\n"\
+            .join([str(self.print_symbol) * self.__width] * self.__height)\
+            if self.__width > 0 and self.__height > 0 else ""
 
     def __repr__(self):
-        """Returns string repr of rect to recreate new instance using eval()."""
+        """Returns string repr of rect to recreate new instan using eval()."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
