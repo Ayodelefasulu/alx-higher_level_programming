@@ -202,4 +202,4 @@ class Rectangle:
 
     def __repr__(self):
         """Returns a string representation of the rectangle object."""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return f"<{self.__class__.__name__}.Rectangle object at {hex(id(self))}>"
