@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module: 3-rectangle
+"""Module: rectangle
 
 This module defines the Rectangle class, representing a geometric rectangle.
 
@@ -48,13 +48,14 @@ Methods:
 
     perimeter(self):
         Computes and returns the rectangle perimeter.
-        If width or height is equal to 0, perimeter has to be equal to 0.
+        If width or height is equal to 0, perimeter is equal to 0.
 
     __str__(self):
-        Returns a string representation of the rectangle using '#'.
+        Returns a string representation of the rectangle using '#' character.
+        If width or height is equal to 0, returns an empty string.
 
     __repr__(self):
-        Returns a string representation of the rectangle object.
+        Returns a string repr of rect obj to be able to recreate a new insta.
 
 Example:
     Creating an instance of Rectangle:
@@ -78,7 +79,7 @@ class Rectangle:
 
     Methods:
         __init__(self, width=0, height=0):
-            Initializes a new Rectangle instance with optional width & height.
+            Initializes a new Rec instance with optional width and height.
 
         @property
         width(self):
@@ -111,13 +112,14 @@ class Rectangle:
 
         perimeter(self):
             Computes and returns the rectangle perimeter.
-            If width or height is equal to 0, perimeter has to be equal to 0.
+            If width or height is equal to 0, perimeter is equal to 0.
 
         __str__(self):
-            Returns a string representation of the rectangle using '#'.
+            Returns a string representation of the rectangle using '#' char.
+            If width or height is equal to 0, returns an empty string.
 
         __repr__(self):
-            Returns a string representation of the rectangle object.
+            Returns a string repr of rect obj to recreate a new instance.
 
     Example:
         Creating an instance of Rectangle:
@@ -125,11 +127,7 @@ class Rectangle:
         my_rectangle = Rectangle(width=5, height=10)
         ```
 
-    Note:
-        This module provides a basic implementation of the Rectangle class,
-        allowing for the creation and manipulation of rectangle objects.
     """
-    
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -187,13 +185,16 @@ class Rectangle:
     def perimeter(self):
         """Computes and returns the rectangle perimeter.
 
-        If width or height is equal to 0, perimeter has to be equal to 0.
+        If width or height is equal to 0, perimeter is equal to 0.
         """
-        return 2 * (self.__width + self.__height) if self.__width >\
-            0 and self.__height > 0 else 0
+        return 2 * (self.__width + self.__height)\
+            if self.__width > 0 and self.__height > 0 else 0
 
     def __str__(self):
-        """Returns a string representation of the rectangle using '#'."""
+        """Returns a string representation of the rectangle using '#' char.
+
+        If width or height is equal to 0, returns an empty string.
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
@@ -201,5 +202,5 @@ class Rectangle:
                 .join(['#' * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
-        """Returns a string representation of the rectangle object."""
-        return f"<{self.__class__.__name__}.Rectangle object at {hex(id(self))}>"
+        """Returns string repr of rect obj to recreate new instance."""
+        return f"{self.__class__.__name__}({self.__width}, {self.__height})"
