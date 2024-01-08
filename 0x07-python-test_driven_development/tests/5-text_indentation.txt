@@ -1,0 +1,31 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+First import ``text_indentation`` from ``5-text_indentation`` module:
+
+>>> from 5-text_indentation import text_indentation
+
+Now, let's test the function with some interactive examples:
+
+1. Test with a simple sentence:
+>>> text_indentation("Hello. How are you?")
+Hello
+How are you?
+
+2. Test with a sentence ending with '?':
+>>> text_indentation("What is your name?")
+What is your name?
+
+3. Test with multiple sentences:
+>>> text_indentation("This is the first sentence. Here is the second sentence. And finally, the third sentence.")
+This is the first sentence
+Here is the second sentence
+And finally, the third sentence.
+
+4. Test with sentences ending with ':':
+>>> text_indentation("Python is a programming language: versatile, powerful, and easy to learn.")
+Python is a programming language
+versatile, powerful, and easy to learn.
