@@ -1,0 +1,28 @@
+.. Say My Name Function Test
+=========================
+
+This document tests the `say_my_name` function.
+
+Usage Example
+-------------
+
+The `say_my_name` function can be used to print a formatted string with the first and last name. Let's see some examples:
+
+- Printing the name with both first and last names:
+
+  >>> from 3-say_my_name import say_my_name
+  >>> say_my_name("John", "Smith")
+  My name is John Smith
+
+>>> say_my_name("Walter")
+My name is Walter
+
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string or last_name must be a string
+
+.. literalinclude:: ../3-say_my_name.py
+    :language: python
+    :lines: 1-14
+
