@@ -17,10 +17,9 @@ class Square(Rectangle):
         self.integer_validator("size", size)
 
         # Call constructor of parent class with width&height both set to size
-
         super().__init__(size, size)
 
     def __str__(self):
         """Return a string representation of the Square instance."""
-        return "[Rectangle] {}/{}"\
+        return "[Square] {}/{}"\
             .format(self._Rectangle__width, self._Rectangle__height)
