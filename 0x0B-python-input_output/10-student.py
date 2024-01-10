@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module improves on 9-student class"""
+
+
 class Student:
     """
     Class representing a student with public instance attributes and
@@ -31,13 +34,14 @@ class Student:
             dict: A dictionary representing the JSON-serializable structure
                 of the Student instance.
         """
+
         # Get all attributes of the instance
         attributes = self.__dict__
 
         # If attrs is specified, filter attributes based on the provided list
         if attrs is not None and isinstance(attrs, list):
             json_dict =\
-                {key: value for key, value in attributes.items() if key in attrs}
+                {k: v for k, v in attributes.items() if k in attrs}
         else:
             json_dict = attributes
 
