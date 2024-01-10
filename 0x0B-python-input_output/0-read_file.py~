@@ -1,0 +1,4 @@
+def read_file(filename=""):
+    with open(filename, "r") as f:
+        for l in f:
+            print(l)
