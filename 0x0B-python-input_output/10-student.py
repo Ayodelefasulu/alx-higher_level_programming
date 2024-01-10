@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Student:
     """
     Class representing a student with public instance attributes and
