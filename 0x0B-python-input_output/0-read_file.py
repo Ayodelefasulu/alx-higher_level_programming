@@ -15,5 +15,5 @@ def read_file(filename=""):
     """This function prints the lines of a file"""
 
     with open(filename, "r") as f:
-        for l in f:
-            print(l, end="")
+        for line in f:
+            print(line, end="")
