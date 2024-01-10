@@ -10,6 +10,7 @@ Argument(s):
 Returns: None
 """
 
+
 def read_file(filename=""):
     """This function prints the lines of a file"""
 
