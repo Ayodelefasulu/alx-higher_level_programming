@@ -10,7 +10,6 @@ The `matrix_divided` function can be used to divide all elements of a matrix.
 Let's see some examples:
 
 Dividing a matrix by 3:
-#>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> from 2-matrix_divided import matrix_divided
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_divided(matrix, 3)
