@@ -10,7 +10,8 @@ def print_metrics(total_size, status_counts):
 
     Args:
         total_size (int): Total file size.
-        status_counts (dict): Dictionary containing counts for each status code.
+        status_counts (dict):
+            Dictionary containing counts for each status code.
     """
     print("File size: {:d}".format(total_size))
     for code in sorted(status_counts.keys()):
@@ -23,7 +24,8 @@ def update_metrics(line, total_size, status_counts):
     Args:
         line (str): Input line in the specified format.
         total_size (int): Current total file size.
-        status_counts (dict): Dictionary containing counts for each status code.
+        status_counts (dict):
+            Dictionary containing counts for each status code.
 
     Returns:
         int: Updated total file size.
@@ -48,7 +50,8 @@ def main():
 
     try:
         for i, line in enumerate(sys.stdin, start=1):
-            total_size, status_counts = update_metrics(line, total_size, status_counts)
+            total_size, status_counts =\
+                update_metrics(line, total_size, status_counts)
 
             if i % 10 == 0:
                 print_metrics(total_size, status_counts)
