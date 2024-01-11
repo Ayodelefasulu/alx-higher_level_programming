@@ -10,9 +10,10 @@ The `say_my_name` function can be used to print a formatted string with the firs
 
 - Printing the name with both first and last names:
 
-  >>> from 3-say_my_name import say_my_name
-  >>> say_my_name("John", "Smith")
-  My name is John Smith
+#  >>> from 3-say_my_name import say_my_name
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("John", "Smith")
+My name is John Smith
 
 >>> say_my_name("Walter")
 My name is Walter
@@ -20,9 +21,9 @@ My name is Walter
 >>> say_my_name(12, "White")
 Traceback (most recent call last):
     ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
 
-.. literalinclude:: ../3-say_my_name.py
-    :language: python
-    :lines: 1-14
-
+>>> say_my_name("White", 12)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
