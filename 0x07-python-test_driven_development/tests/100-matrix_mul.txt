@@ -1,0 +1,61 @@
+Unittest for matrix_mul function
+"""
+import doctest
+
+from 100-matrix_mul import matrix_mul
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+# Test case 1
+
+>>> matrix_a = [[1, 2], [3, 4]]
+>>> matrix_b = [[1, 2], [3, 4]]
+>>> matrix_mul(matrix_a, matrix_b)
+[[7, 10], [15, 22]]
+
+# Test case 2
+
+>>> matrix_a = [[1, 2]]
+>>> matrix_b = [[3, 4], [5, 6]]
+>>> matrix_mul(matrix_a, matrix_b)
+[[13, 16]]
+
+# Test case 3
+
+>>> matrix_a = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_b = [[7, 8], [9, 10], [11, 12]]
+>>> matrix_mul(matrix_a, matrix_b)
+[[58, 64], [139, 154]]
+
+# Test case 4
+
+>>> matrix_a = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_b = [[1], [2], [3]]
+>>> matrix_mul(matrix_a, matrix_b)
+[[14], [32]]
+
+# Test case 5
+
+>>> matrix_a = [[1, 2, 3]]
+>>> matrix_b = [[1], [2], [3]]
+>>> matrix_mul(matrix_a, matrix_b)
+[[14]]
+
+# Test case 4
+
+>>> matrix_a = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_b = [[1], [2], [3]]
+>>> matrix_mul(matrix_a, matrix_b)
+[[14], [32]]
+
+# Test case 5: Check for ValueError when matrices can't be multiplied
+
+>>> matrix_a = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_b = [[1, 2, 3]]
+>>> matrix_mul(matrix_a, matrix_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+
+if __name__ == "__main__":
+    matrix_mul_test()
