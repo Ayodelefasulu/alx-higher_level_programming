@@ -3,7 +3,8 @@ The ``0-add_integer`` module
 Using ``add_integer``
 ---------------------
 First import ``add_integer`` from ``0-add_integer`` module:
->>> add_integer = __import__('0-add_integer').add_integer
+#>>> add_integer = __import__('0-add_integer').add_integer
+>>> from 0-add_integer import add_integer
 >>> add_integer(2, 10)
 12
 >>> add_integer(-2, 10)
