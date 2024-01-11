@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module contain a function that indents text"""
+
+
 def text_indentation(text):
     """Prints a text with 2 new lines after each '.', '?', and ':'
 
@@ -11,6 +14,7 @@ def text_indentation(text):
     Returns:
         None
     """
+
     # Check if text is a string
     if not isinstance(text, str):
         raise TypeError("text must be a string")
@@ -33,4 +37,4 @@ def text_indentation(text):
 
     # Print the last line if it's not empty
     if line:
-        print(line.strip()
+        print(line.strip())
