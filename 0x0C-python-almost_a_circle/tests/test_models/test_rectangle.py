@@ -1,8 +1,8 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
-# from unittest.mock import patch
-# from io import StringIO
+from unittest.mock import patch
+from io import StringIO
 
 class TestRectangle(unittest.TestCase):
     def test_constructor(self):
@@ -30,7 +30,7 @@ class TestRectangle(unittest.TestCase):
         rectangle.y = 15
         self.assertEqual(rectangle.y, 15)
 
-"""    # Test invalid attribute values
+    # Test invalid attribute values
         with self.assertRaises(TypeError):
             rectangle.width = "invalid"
         with self.assertRaises(ValueError):
@@ -56,8 +56,8 @@ class TestRectangle(unittest.TestCase):
 
     # Test if it inherits from Base
         self.assertIsInstance(rectangle, Base)
-"""
-"""   # Test for area of rectangle
+
+    # Test for area of rectangle
     def test_area(self):
         rectangle = Rectangle(10, 20, 3, 4, 5)
         self.assertEqual(rectangle.area(), 200)
@@ -97,8 +97,8 @@ class TestRectangle(unittest.TestCase):
         expected_output = "##\n##"
         self.assertEqual(output, expected_output)
 
-"""
-"""   def test_str(self):
+
+    def test_str(self):
         r1 = Rectangle(4, 6, 2, 1, 12)
 
         # Redirect stdout to capture printed output
@@ -108,8 +108,8 @@ class TestRectangle(unittest.TestCase):
 
         expected_output = "[Rectangle] (12) 2/1 - 4/6"
         self.assertEqual(output, expected_output)
-"""
-"""    def test_str(self):
+
+    def test_str(self):
         r1 = Rectangle(4, 6, 2, 1, 12)
 
         # Redirect stdout to capture printed output
@@ -119,8 +119,8 @@ class TestRectangle(unittest.TestCase):
 
         expected_output = "[Rectangle] (12) 2/1 - 4/6"
         self.assertEqual(output, expected_output)
-"""
-"""    def test_str_with_default_values(self):
+
+    def test_str_with_default_values(self):
         r2 = Rectangle(5, 5, 1)
 
         # Redirect stdout to capture printed output
@@ -130,13 +130,13 @@ class TestRectangle(unittest.TestCase):
 
         expected_output = "[Rectangle] (1) 1/0 - 5/5"
         self.assertEqual(output, expected_output)
-"""
-"""    def test_dislay_with_shifted_position(self):
+
+    def test_dislay_with_shifted_position(self):
         r2 = Rectangle(3, 2, 1, 0)
         tst = r2.display()
         exp = "  ##\n  ##\n  ##"
         self.assetEqual(tst, exp)
-"""
 
-# if __name__ == '__main__':
-#        unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
