@@ -1,8 +1,8 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
-from unittest.mock import patch
-from io import StringIO
+# from unittest.mock import patch
+# from io import StringIO
 
 class TestRectangle(unittest.TestCase):
     def test_constructor(self):
