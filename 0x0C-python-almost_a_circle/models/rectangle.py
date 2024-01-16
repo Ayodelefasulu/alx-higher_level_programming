@@ -22,7 +22,9 @@ class Rectangle(Base):
 
           Setters: setter__width, setter__height, setter___x, setter__y
 
-          Methods: validate_integer, validate_positive, validate_non_negative
+          Methods:
+              def area(self):
+                  return self.__width * self.__height
 
           Raises: TypeError, ValueError
 
