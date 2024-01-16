@@ -21,6 +21,11 @@ class Rectangle(Base):
           Getters: getter__width, getter__height, getter__x, getter__y
 
           Setters: setter__width, setter__height, setter___x, setter__y
+
+          Methods: validate_integer, validate_positive, validate_non_negative
+
+          Raises: TypeError, ValueError
+
         """
         super().__init__(id)
 
