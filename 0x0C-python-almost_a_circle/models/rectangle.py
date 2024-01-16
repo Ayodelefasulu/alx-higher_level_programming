@@ -37,6 +37,8 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        self.validate_integer("width", value)
+        self.validate_positive("width", value)
         self.__width = value
 
     # Getter and setter for height
@@ -46,6 +48,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        self.validate_integer("height", value)
+        self.validate_positive("height", value)
         self.__height = value
 
     # Getter and setter for x
@@ -55,6 +59,8 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        self.validate_integer("x", value)
+        self.validate_non_negative("y", value)
         self.__x = value
 
     # Getter and setter for y
@@ -64,44 +70,18 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        self.validate_integer("y", value)
+        self.validate_non_negative("y", value)
         self.__y = value
 
+    def validate_integer(self, attribute_name, value):
+        if not isinstance(value, int):
+            raise TypeError(f"{attribute_name} must be an integer")
 
-"""     super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+    def validate_positive(self, attribute_name, value):
+        if value <= 0:
+            raise ValueError(f"{attribute_name} must be > 0")
 
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, width):
-        self.__width = width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, height):
-        self.__height = height
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.getter
-    def x(self, x):
-        self.__ = x
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.getter
-    def y(self, y):
-        self.__y = y
-"""
+    def validate_non_negative(self, attribute_name, value):
+        if value < 0:
+            raise ValueError(f"{attribute_name} must be >= 0")
