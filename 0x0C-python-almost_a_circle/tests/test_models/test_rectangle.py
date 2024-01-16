@@ -97,6 +97,49 @@ class TestRectangle(unittest.TestCase):
         expected_output = "##\n##"
         self.assertEqual(output, expected_output)
 
+    """def test___str__(self):
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(print(r1), "[Rectangle] (12) 2/1 - 4/6")
+
+        r2 = Rectangle(5, 5, 2, 1, 1)
+        self.assertEqual(print(r2), "[Rectangle] (1) 2/1 - 5/5")
+
+        r3 = Rectangle(4, 6, 2)
+        self.assertEqual(print(r3), "[Rectangle] (1) 1/0 - 4/6")
+    """
+    def test_str(self):
+        r1 = Rectangle(4, 6, 2, 1, 12)
+
+        # Redirect stdout to capture printed output
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print(r1)
+            output = mock_stdout.getvalue().strip()
+
+        expected_output = "[Rectangle] (12) 2/1 - 4/6"
+        self.assertEqual(output, expected_output)
+
+def test_str(self):
+        r1 = Rectangle(4, 6, 2, 1, 12)
+
+        # Redirect stdout to capture printed output
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print(r1)
+            output = mock_stdout.getvalue().strip()
+
+        expected_output = "[Rectangle] (12) 2/1 - 4/6"
+        self.assertEqual(output, expected_output)
+
+def test_str_with_default_values(self):
+        r2 = Rectangle(5, 5, 1)
+
+        # Redirect stdout to capture printed output
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print(r2)
+            output = mock_stdout.getvalue().strip()
+
+        expected_output = "[Rectangle] (1) 1/0 - 5/5"
+        self.assertEqual(output, expected_output)
+
 
 if __name__ == '__main__':
         unittest.main()
