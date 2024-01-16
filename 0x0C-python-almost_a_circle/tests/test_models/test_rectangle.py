@@ -138,5 +138,5 @@ class TestRectangle(unittest.TestCase):
         self.assetEqual(tst, exp)
 """
 
-if __name__ == '__main__':
-        unittest.main()
+# if __name__ == '__main__':
+#        unittest.main()
