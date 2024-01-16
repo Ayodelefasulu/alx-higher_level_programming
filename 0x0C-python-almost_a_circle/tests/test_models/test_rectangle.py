@@ -1,6 +1,8 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from unittest.mock import patch
+from io import StringIO
 
 class TestRectangle(unittest.TestCase):
     def test_constructor(self):
@@ -71,6 +73,29 @@ class TestRectangle(unittest.TestCase):
 
         rectangle = Rectangle(2, 22, 3, 4, 5)
         self.assertEqual(rectangle.area(), 44)
+
+    # Test for "#"
+    def test_display(self):
+        r1 = Rectangle(4, 6)
+
+        # Redirect stdout to capture printed output
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            r1.display()
+            output = mock_stdout.getvalue().strip()
+
+        expected_output = "####\n####\n####\n####\n####\n####"
+        self.assertEqual(output, expected_output)
+
+    def test_display_with_height_2(self):
+        r1 = Rectangle(2, 2)
+
+        # Redirect stdout to capture printed output
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            r1.display()
+            output = mock_stdout.getvalue().strip()
+
+        expected_output = "##\n##"
+        self.assertEqual(output, expected_output)
 
 
 if __name__ == '__main__':
