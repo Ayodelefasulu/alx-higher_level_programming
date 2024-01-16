@@ -28,6 +28,27 @@ class TestRectangle(unittest.TestCase):
         rectangle.y = 15
         self.assertEqual(rectangle.y, 15)
 
+    # Test invalid attribute values
+        with self.assertRaises(TypeError):
+            rectangle.width = "invalid"
+        with self.assertRaises(ValueError):
+            rectangle.width = 0
+
+        with self.assertRaises(TypeError):
+            rectangle.height = "invalid"
+        with self.assertRaises(ValueError):
+            rectangle.height = -5
+
+        with self.assertRaises(TypeError):
+            rectangle.x = "invalid"
+        with self.assertRaises(ValueError):
+            rectangle.x = -2
+
+        with self.assertRaises(TypeError):
+            rectangle.y = "invalid"
+        with self.assertRaises(ValueError):
+            rectangle.y = -3
+
     def test_inheritance(self):
         rectangle = Rectangle(width=10, height=20, x=5, y=8, id=1)
 
