@@ -14,16 +14,19 @@ class Rectangle(Base):
         """This function inherits attributes from super class"""
 
         """
-          Attributes:__width, __height, __x, __y
+           Attributes:__width, __height, __x, __y
 
-          Return: None
+           Return: None
 
-          Getters: getter__width, getter__height, getter__x, getter__y
+           Getters: getter__width, getter__height, getter__x, getter__y
 
-          Setters: setter__width, setter__height, setter___x, setter__y
+           Setters: setter__width, setter__height, setter___x, setter__y
 
-          Raises: TypeError, ValueError
+           Raises: TypeError, ValueError
 
+           Method(s):
+               def area(self):
+                   return self.__width * self.__height
         """
         super().__init__(id)
 
@@ -100,3 +103,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+       return self.__width * self.__height

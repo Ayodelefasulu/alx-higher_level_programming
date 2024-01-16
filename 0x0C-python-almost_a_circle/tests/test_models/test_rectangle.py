@@ -57,6 +57,16 @@ class TestRectangle(unittest.TestCase):
     # Test if it inherits from Base
         self.assertIsInstance(rectangle, Base)
 
+    def test_area(self):
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)
+
+        r1 = Rectangle(3, 3)
+        self.assertEqual(r1.area(), 9)
+
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.area(), 20)
+
 
 if __name__ == '__main__':
     unittest.main()
