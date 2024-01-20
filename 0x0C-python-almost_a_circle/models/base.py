@@ -98,7 +98,8 @@ class Base:
         try:
             with open(filename, 'r') as csvfile:
                 reader = csv.reader(csvfile)
-                dictionaries = [dict(zip(cls.csv_attributes, map(int, row))) for row in reader]
+                dictionaries =\
+                    [dict(zip(cls.csv_attributes, map(int, row))) for row in reader]
                 return [cls.create(**d) for d in dictionaries]
         except FileNotFoundError:
             return []
