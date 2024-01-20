@@ -5,6 +5,7 @@ This module is made up of class Base which is ...
 ...the root class in this project.
 
 """
+import json
 
 
 class Base:
