@@ -124,7 +124,7 @@ class Rectangle(Base):
             format(self.id, self.__x, self.__y, self.__width, self.height)
 
     def update(self, *args):
-        """Assign arguments to id, width, height, x, and y attributes in order."""
+        """Assign args to id, width, height, x, & y in order."""
 
         attributes = ["id", "width", "height", "x", "y"]
         for index, value in enumerate(args):
