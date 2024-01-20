@@ -124,7 +124,7 @@ class Rectangle(Base):
             format(self.id, self.__x, self.__y, self.__width, self.height)
 
     def update(self, *args, **kwargs):
-        """Assign arguments to id, width, height, x, & y  using *args & **kwargs."""
+        """Assign args to id, width, height, x, & y  using *args & **kwargs."""
 
         attributes = ["id", "width", "height", "x", "y"]
 
