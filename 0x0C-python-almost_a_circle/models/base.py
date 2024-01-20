@@ -7,6 +7,7 @@ This module is made up of class Base which is ...
 """
 import json
 import csv
+from turtle import Turtle, Screen
 
 
 class Base:
@@ -104,3 +105,41 @@ class Base:
                 return [cls.create(**d) for d in dictionaries]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw all the rectangles and squares using Turtle graphics."""
+
+        # Create a Turtle screen
+        screen = Screen()
+        screen.bgcolor("white")
+
+        # Create a Turtle object
+        drawer = Turtle()
+        drawer.speed(2)
+
+        # Draw rectangles
+        for rect in list_rectangles:
+            drawer.penup()
+            drawer.goto(rect.x, rect.y)
+            drawer.pendown()
+            drawer.forward(rect.width)
+            drawer.right(90)
+            drawer.forward(rect.height)
+            drawer.right(90)
+            drawer.forward(rect.width)
+            drawer.right(90)
+            drawer.forward(rect.height)
+            drawer.right(90)
+
+        # Draw squares
+        for square in list_squares:
+            drawer.penup()
+            drawer.goto(square.x, square.y)
+            drawer.pendown()
+            for _ in range(4):
+                drawer.forward(square.size)
+                drawer.right(90)
+
+        # Close the window on click
+        screen.exitonclick()
