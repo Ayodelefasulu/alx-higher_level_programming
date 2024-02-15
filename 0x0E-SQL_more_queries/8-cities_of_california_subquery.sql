@@ -2,7 +2,7 @@
 
 SELECT cities.id, cities.name
 FROM cities
-WHERE state.id = (
+WHERE state_id = (
     SELECT id
     FROM states
     WHERE name = 'California'
