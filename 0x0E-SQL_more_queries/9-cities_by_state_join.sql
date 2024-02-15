@@ -1,7 +1,5 @@
 -- list_all_cities.sql
 
-USE hbtn_0d_usa;
-
 SELECT cities.id, cities.name, states.name AS state_name
 FROM cities, states
 WHERE cities.state_id = states.id
