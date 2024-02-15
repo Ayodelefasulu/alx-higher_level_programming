@@ -1,6 +1,6 @@
 -- list_cities_california.sql
 
-SELECT *
+SELECT cities.id, cities.name
 FROM cities
 WHERE state_id = (
     SELECT id
