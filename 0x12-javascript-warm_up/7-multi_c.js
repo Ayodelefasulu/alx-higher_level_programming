@@ -7,8 +7,7 @@ if (!isNaN(x) && x > 0) {
     console.log('C is fun');
   }
 } else if (x < 0) {
-  return
-}
-  else {
+  process.exit();
+} else {
   console.log('Missing number of occurrences');
 }
