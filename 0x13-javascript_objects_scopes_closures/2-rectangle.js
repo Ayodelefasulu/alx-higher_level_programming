@@ -6,9 +6,9 @@ class Rectangle {
       return;
     }
 
-   /* if (h <= 0) {
+    /* if (h <= 0) {
       return;
-    }*/
+    } */
 
     this.width = w;
     this.height = h;
