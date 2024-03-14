@@ -18,4 +18,4 @@ const concatenatedContent = contentA + contentB;
 // Write concatenated content to destination file
 fs.writeFileSync(fileC, concatenatedContent);
 
-console.log('Concatenation successful!');
+// console.log('Concatenation successful!');
