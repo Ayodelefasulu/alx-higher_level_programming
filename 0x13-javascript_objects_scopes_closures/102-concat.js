@@ -1,12 +1,10 @@
 #!/usr/bin/node
-/* eslint-disable semi */
-/* eslint-disable no-unused-vars */
 
 const fs = require('fs');
 
 const fileA = process.argv[2];
 const fileB = process.argv[3];
-const destinationFile = process.argv[4];
+const fileC = process.argv[4];
 
 // Read content from fileA
 const contentA = fs.readFileSync(fileA, 'utf-8');
@@ -18,6 +16,6 @@ const contentB = fs.readFileSync(fileB, 'utf-8');
 const concatenatedContent = contentA + contentB;
 
 // Write concatenated content to destination file
-fs.writeFileSync(destinationFile, concatenatedContent);
+fs.writeFileSync(fileC, concatenatedContent);
 
 console.log('Concatenation successful!');
