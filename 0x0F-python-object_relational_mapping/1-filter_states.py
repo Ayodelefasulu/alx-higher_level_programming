@@ -30,7 +30,7 @@ def filter_states(username, password, database_name):
         cursor = db.cursor()
 
         # Execute the SQL query to filter states starting with 'N'
-        cursor.execute("SELECT DISTINCT * FROM states WHERE name LIKE 'N%'")
+        cursor.execute("SELECT DISTINCT * FROM states WHERE name LIKE 'N%';")
 
         # Fetch all the rows
         rows = cursor.fetchall()
