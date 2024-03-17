@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa.
+Script that lists all states with a name starting with
+    N (upper N) from the database hbtn_0e_0_usa.
 
 Usage:
     ./1-filter_states.py <username> <password> <database_name>
@@ -11,6 +12,7 @@ Example:
 
 import MySQLdb
 import sys
+
 
 def filter_states(username, password, database_name):
     try:
@@ -43,6 +45,7 @@ def filter_states(username, password, database_name):
     except MySQLdb.Error as e:
         print("Error connecting to MySQL:", e)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
