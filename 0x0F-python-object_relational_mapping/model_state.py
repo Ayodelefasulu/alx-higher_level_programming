@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Defines the State class linked to the states table in the hbtn_0e_6_usa database."""
+"""Defines the State class linked to the states table
+    in the hbtn_0e_6_usa database."""
 import sys
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -9,11 +10,12 @@ Base = declarative_base()
 
 class State(Base):
     """Represents a state for the states table."""
-    __tablename__ = "states" # links the class to the table states
+    __tablename__ = "states"  # links the class to the table states
 
     # defines the columns for the table
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+
 
 """
 if __name__ == "__main__":
