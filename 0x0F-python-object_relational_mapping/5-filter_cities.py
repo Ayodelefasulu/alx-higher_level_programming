@@ -17,7 +17,8 @@ import sys
 if __name__ == "__main__":
     # Verify that the correct number of command-line arguments are provided
     if len(sys.argv) != 5:
-        print("Usage: ./5-filter_cities.py <username> <password> <database_name> <state_name>")
+        print("Usage: ./5-filter_cities.py\
+            <username> <password> <database_name> <state_name>")
         sys.exit(1)  # Exit with an error code if arguments are incorrect
 
     # Assign command-line arguments to variables
