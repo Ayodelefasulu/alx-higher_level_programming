@@ -12,6 +12,7 @@ Example:
 import MySQLdb
 import sys
 
+
 def get_states(username, password, database_name):
     try:
         # Connect to MySQL server
@@ -44,9 +45,11 @@ def get_states(username, password, database_name):
         print("Error connecting to MySQL:", e)
         sys.exit(1)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: ./0-select_states.py <username> <password> <database_name>")
+        print("Usage: ./0-select_states.py <username>\
+            <password> <database_name>")
         sys.exit(1)
 
     username = sys.argv[1]
@@ -54,4 +57,3 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
 
     get_states(username, password, database_name)
-
