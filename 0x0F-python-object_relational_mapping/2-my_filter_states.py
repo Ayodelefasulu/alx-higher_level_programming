@@ -29,8 +29,8 @@ def filter_states(username, password, database_name, state_name):
         cursor = db.cursor()
 
         # Execute SQL query to filter states based on provided state name
-        query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-        cursor.execute(query, (state_name,))
+        query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+        cursor.execute(query)
 
         # Fetch all the rows
         rows = cursor.fetchall()
