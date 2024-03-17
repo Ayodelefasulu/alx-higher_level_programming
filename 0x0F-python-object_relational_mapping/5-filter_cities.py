@@ -28,39 +28,40 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     # Connect to MySQL server using the provided credentials
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database_name
-    )
+    try:
+        db = MySQLdb.connect(
+            host='localhost',
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database_name
+        )
 
-    # Create a cursor object to execute SQL queries
-    cursor = db.cursor()
+        # Create a cursor object to execute SQL queries
+        cursor = db.cursor()
 
-    # Use a parameterized query to filter cities by state name
-    query = "SELECT cities.name FROM cities " \
-            "JOIN states ON cities.state_id = states.id " \
-            "WHERE states.name = %s ORDER BY cities.id ASC"
+        # Use a parameterized query to filter cities by state name
+        query = "SELECT cities.name FROM cities " \
+                "JOIN states ON cities.state_id = states.id " \
+                "WHERE states.name = %s ORDER BY cities.id ASC"
 
-    cursor.execute(query, (state_name,))
+        cursor.execute(query, (state_name,))
 
-    # Fetch all the rows from the query result
-    rows = cursor.fetchall()
+        # Fetch all the rows from the query result
+        rows = cursor.fetchall()
 
-    # Display the filtered cities
-    if rows:
-        cities = ', '.join(row[0] for row in rows)
-        print(cities)
-    # else:
-        # print("No cities found for the state:", state_name)
+        # Display the filtered cities
+        if rows:
+            cities = ', '.join(row[0] for row in rows)
+            print(cities)
+        # else:
+            # print("No cities found for the state:", state_name)
 
-    # Close the cursor and MySQL connection
-    cursor.close()
-    db.close()
+        # Close the cursor and MySQL connection
+        cursor.close()
+        db.close()
 
-# except MySQLdb.Error as e:
-     # Handle MySQL errors and print an error message
-     # print("Error connecting to MySQL:", e)
-     # sys.exit(1)  # Exit with an error code if there is a MySQL error
+    except MySQLdb.Error as e:
+        # Handle MySQL errors and print an error message
+        print("Error connecting to MySQL:", e)
+        sys.exit(1)  # Exit with an error code if there is a MySQL error
