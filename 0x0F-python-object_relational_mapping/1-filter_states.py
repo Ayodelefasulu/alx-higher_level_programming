@@ -15,6 +15,7 @@ import sys
 
 
 def filter_states(username, password, database_name):
+    """This function connects to database and queries it"""
     try:
         # Connect to MySQL server
         db = MySQLdb.connect(
