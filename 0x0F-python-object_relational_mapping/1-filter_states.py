@@ -14,7 +14,7 @@ import sys
 
 def filter_states(username, password, database_name):
     try:
-        # connect to mysql server
+        # Connect to MySQL server
         db = MySQLdb.connect(
             host='localhost',
             port=3306,
@@ -23,27 +23,26 @@ def filter_states(username, password, database_name):
             db=database_name
         )
 
-        # create a cursor object
-        cur = db.cursor()
+        # Create a cursor object
+        cursor = db.cursor()
 
-        # execute sql queries to filter states starting with 'N'
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Execute the SQL query to filter states starting with 'N'
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-        # this fetches the queries selected above
-        rows = cur.fetchall()
+        # Fetch all the rows
+        rows = cursor.fetchall()
 
-        # display the result
+        # Display the results
         for row in rows:
             print(row)
 
-        # close the cursor and connection
-        cur.close()
-        db.close
+        # Close the cursor and connection
+        cursor.close()
+        db.close()
 
     except MySQLdb.Error as e:
-        print("Error connecting to database:", e)
+        print("Error connecting to MySQL:", e)
         sys.exit(1)
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
