@@ -16,8 +16,10 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database_name = sys.argv[3]
 
+    # Create an engine, bind it to database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         username, password, database_name))
+    Base.metadata.bind = engine
 
     # Create session
     Session = sessionmaker(bind=engine)
