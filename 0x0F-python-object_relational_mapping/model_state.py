@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the State class linked to the states table
     in the hbtn_0e_6_usa database."""
-import sys
+# import sys
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
