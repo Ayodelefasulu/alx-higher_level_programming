@@ -1,3 +1,3 @@
 #!/bin/bash
-# Display body for successful (200) GET request (alternative)
-if [[ $(curl -s -o /dev/null -w "%{http_code}" "$1") == 200 ]]; then curl -s "$1"; fi
+# This script sends a GET request to a URL and displays the body of the response for a 200 status code
+curl -s -w "%{http_code}" -o response.txt "$1"; status_code=$(tail -n1 response.txt); [[ $status_code == "200" ]] && cat response.txt
