@@ -17,11 +17,11 @@ def get_request_id(url):
         url (str): The URL to fetch the X-Request-Id from.
 
     Returns:
-        str: The value of the X-Request-Id header, or an empty string if not found.
+        str: Value of X-Request-Id header, or empty string if not found.
     """
 
     with urllib.request.urlopen(url) as response:
-        headers = response.info()
+        headers = dict(response.getheaders())
         return headers.get("X-Request-Id", "")
 
 
