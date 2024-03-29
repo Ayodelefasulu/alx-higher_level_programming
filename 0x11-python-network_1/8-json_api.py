@@ -3,59 +3,32 @@
 This script takes in a letter and sends a POST request to
 http://0.0.0.0:5000/search_user with the letter as a parameter.
 """
+
 import requests
 import sys
 
-
-def search_user(letter):
-    """Sends a POST request and parses a simple response format.
-
-    Args:
-        letter (str): The letter to search for.
-
-    Returns:
-        None if the response format is invalid or empty,
-        otherwise a list containing user data ([id, name]).
-    """
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        q = ""
+    else:
+        q = sys.argv[1]
 
     url = "http://0.0.0.0:5000/search_user"
-    data = {"q": letter}
+    data = {'q': q}
+
+    # Send a POST request with the letter as a parameter
+    response = requests.post(url, data=data)
 
     try:
-        response = requests.post(url, data=data)
-        response.raise_for_status()  # Raise error for status_c >= 400
+        # Try to parse the response as JSON
+        json_data = response.json()
 
-        # Check for empty response body
-        if not response.text:
-            return None
-
-        # Split response by space (assuming format: [id] <name>)
-        user_data = response.text.strip().split(" ")
-
-        # Validate response format (two elements)
-        if len(user_data) != 2:
-            print("Not a valid JSON")
-            return None
-
-        # Try converting elements to integers and string
-        try:
-            user_id = int(user_data[0][1:-1])  # Remove brackets from id
-            user_name = user_data[1]
-        except ValueError:
-            print("Not a valid JSON")
-            return None
-
-        return [user_id, user_name]
-    except requests.exceptions.RequestException as e:
-        print("Error:", e)
-        return None
-
-
-if __name__ == "__main__":
-    letter = sys.argv[1] if len(sys.argv) > 1 else ""
-    user_data = search_user(letter)
-
-    if user_data:
-        print(f"[{user_data[0]}], {user_data[1]}")
-    else:
-        print("No result")
+        # Check if JSON is empty
+        if not json_data:
+            print("No result")
+        else:
+            # Display the id and name from the JSON data
+            print(f"[{json_data['id']}] {json_data['name']}")
+    except ValueError:
+        # Handle invalid JSON format
+        print("Not a valid JSON")
